@@ -1,0 +1,54 @@
+.main {
+    height: 100vh;
+    background-image: linear-gradient(
+      to right,
+      rgb(145, 21, 42),
+      rgb(241, 4, 95)
+    );
+    .ocphMark {
+      color: white;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+    }
+  
+    .main-column {
+      display: grid;
+      height: 100vh;
+      grid-template-columns: 65% 35%;
+      .left {
+        background: transparent;
+        padding: 50px;
+        color: white;
+        .left-content {
+          text-align: center;
+          vertical-align: middle;
+        }
+        
+      }
+      .right {
+        box-shadow: 1px;
+        padding: 50px;
+        background-color: rgb(255, 255, 255);
+        input {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  
+  a{
+      margin: 20px 0px;
+      display: block;
+  }
+  
+  @media screen and (max-width: 621px) {
+    .main-column {
+      grid-template-columns: 0% 100% !important;
+      .right {
+        padding: 100px;
+      }
+    }
+  }
+  

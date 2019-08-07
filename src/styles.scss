@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+input{
+    min-height: 25px;
+    margin: 2px;
+    display: block;
+}
+
+
+select{
+    min-height: 35px;
+    margin: 2px;
+    display: block;
+    width: 100%;
+    margin-bottom:20px; 
+}
+
+body{
+    margin: 0px;
+}
+
+
+button{
+    min-height: 40px;
+    min-width: 100px;
+    background-color: transparent;
+}
