@@ -2,8 +2,8 @@
     height: 100vh;
     background-image: linear-gradient(
       to right,
-      rgb(145, 21, 42),
-      rgb(241, 4, 95)
+      rgb(243, 47, 21),
+      rgb(233, 192, 81)
     );
     .ocphMark {
       color: white;
@@ -15,7 +15,7 @@
     .main-column {
       display: grid;
       height: 100vh;
-      grid-template-columns: 65% 35%;
+      grid-template-columns: 25% 75%;
       .left {
         background: transparent;
         padding: 50px;
@@ -69,6 +69,15 @@
     }
   }
   
-  .asDeveloper{
-    right: 10px;
-  }
+  
+table{
+    width: 100%;
+    border: 1px solid silver;
+    tr{
+        border-bottom: 1px solid silver;
+    }
+    th,td{
+        width: auto;
+    }
+}
+  

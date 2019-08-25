@@ -7,11 +7,16 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ProfileComponent } from './auth/profile/profile.component';
+import { DeveloperComponent } from './developer/developer.component';
 
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register',      component: RegisterComponent },
+  { path: 'profile',      component: ProfileComponent },
+
+  { path: 'developer',      component: DeveloperComponent },
   // {
   //   path: 'heroes',
   //   component: HeroListComponent,
@@ -35,6 +40,8 @@ const appRoutes: Routes = [
     AuthComponent,
     LoginComponent,
     RegisterComponent,
+    ProfileComponent,
+    DeveloperComponent,
   ],
   imports: [
     BrowserModule,AppRoutingModule,

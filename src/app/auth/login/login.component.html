@@ -2,22 +2,24 @@
   <div class="main-column">
     <div class="left">
       <div class="left-content">
+        <img width="150px" src="../../../assets/Images/User_Circle.png" />
         <h1>One Account</h1>
         <h1>FOR ALL STIMIK APPS</h1>
         <h5>STIMIK SEPNOP JAYAPURA</h5>
       </div>
     </div>
     <div class="right">
+      <img width="0" src="../../../assets/Images/User_Circle.png" />
       <h1>Login</h1>
-      <label>User Name</label>
-      <input />
-      <label>Password</label>
-      <input type="password" />
-
-      <button class="btn btn-primary">Login</button>
-      <a href="/register" class="btn btn-primary"
-        >Not Have Account ? Register Here</a
-      >
+      <form >
+        <label>User Name</label>
+        <input ngModel="model.User" type="text"/>
+        <label>Password</label>
+        <input type="text" ngModel="model.Password" />
+        <button class="btn btn-primary" type="button" (click)="login(User)">Login</button>
+      </form>
+      <a href="/register" class="btn btn-primary">Forgot Password</a>
+      <a href="/register" class="btn btn-primary">Not Have Account ? Register Here</a>
     </div>
   </div>
 
