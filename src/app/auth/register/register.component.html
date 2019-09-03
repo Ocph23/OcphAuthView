@@ -9,34 +9,37 @@
     </div>
     <div class="right">
       <h1>Register</h1>
-      <label>First Name</label>
-      <input />
+      <form [formGroup]="model" (ngSubmit)="register(model.value)">
+        <label>First Name</label>
+      <input formControlName="firstName" class="ng-valid" required />
 
       <label>Last Name</label>
-      <input type="password" />
+      <input type="text"  formControlName="lastName" class="ng-valid" required/>
 
       <label>Email</label>
-      <input type="email" required />
+      <input type="email" formControlName="email" class="ng-valid" required />
 
       <label>Password</label>
-      <input type="password" />
+      <input type="password" formControlName="password" class="ng-valid" required/>
 
       <label>Confirm Password</label>
-      <input type="password" />
+      <input type="password"  formControlName="confirmPassword" class="ng-valid" required/>
 
       <label>Register As</label>
-      <select>
-        <option>Guest</option>
-        <option>Student</option>
-        <option>Dosen</option>
-        <option>Stimik Staf</option>
-        <option>Developer</option>
+      <select formControlName="role">
+        <option
+            *ngFor="let option of Roles; index as i"
+            [selected]="option === Guest">
+            {{ option }}
+        </option>
       </select>
 
-      <label>IDENTITY NUMBER</label>
-      <input />
+      <label *ngIf="ChangeIdentityLabel('Student')">NPM</label>
+      <label *ngIf="ChangeIdentityLabel('Teacher')">NIDN</label>
+      <input formControlName="identityNumber" *ngIf="ChangeIdentityLabel('Student') ||ChangeIdentityLabel('Teacher')" />
 
-      <button class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary">Register</button>
+      </form>
     </div>
   </div>
   
@@ -44,3 +47,14 @@
         <label>Ocph23 @2019</label>
       </div>
 </div>
+
+
+
+<style>
+.ng-valid[required], .ng-valid.required  {
+  border: 1px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border: 1px solid #a94442; /* red */
+}</style>

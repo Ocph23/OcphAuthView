@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -9,6 +9,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { DeveloperComponent } from './developer/developer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -42,9 +43,11 @@ const appRoutes: Routes = [
     RegisterComponent,
     ProfileComponent,
     DeveloperComponent,
+   
   ],
   imports: [
-    BrowserModule,AppRoutingModule,
+    BrowserModule,AppRoutingModule,  HttpClientModule,  FormsModule, 
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

@@ -3,8 +3,8 @@
     <div class="left">
       <div class="left-content">
         <img width="150px" src="../../../assets/Images/User_Circle.png" />
-        <h1>YOSEPH KUNGKUNG</h1>
-        <h1>MAHASISWA</h1>
+        <h1>{{profile.fullName}}</h1>
+        <h1>{{profile.roles[0]}}</h1>
         <h5></h5>
       </div>
     </div>
@@ -13,37 +13,43 @@
       <button class="asDeveloper">Register As Developer</button>
       <h1>PROFILE</h1>
       <label>Nama</label>
-      <input  value="Yoseph Kungkung" readonly />
+      <input  [(ngModel)]="profile.fullName" />
 
-      <label>Panggilan</label>
-      <input  value="Ocph" readonly />
-
-      <label>NPM</label>
-      <input  value="2015 11 099" readonly />
-
-      <label>Angkatan</label>
-      <input  value="2015/2016" readonly />
-
+     
+     
       <label>Tempat, Tanggal Lahir</label>
       <input  value="Palopo, 23 Februari 1979" readonly />
 
       <label>Email</label>
-      <input  value="Ocph23@gmail.com" readonly />
+      <input  [(ngModel)]="profile.email" readonly />
 
       <label>Telepon</label>
       <input  value="08114810279" readonly />
 
 
       <label>Alamat</label>
-      <textarea readonly >
+      <textarea [(ngModel)]="profile.Address" >
         Jln. Ardipura No 23
         Jayapura
-
       </textarea>
 
-      
+      <label>I am a</label>
+      <select [(ngModel)]="profile.role">
+        <option
+            *ngFor="let option of Roles; index as i"
+            [selected]="option === Guest">
+            {{ option }}
+        </option>
+      </select>
 
+
+      <label *ngIf="ChangeIdentityLabel('Student')">NPM</label>
+      <label *ngIf="ChangeIdentityLabel('Teacher')">NIDN</label>
+      <input [(ngModel)]="profile.identityNumber" *ngIf="ChangeIdentityLabel('Student') ||ChangeIdentityLabel('Teacher')" />
+
+      <button class="asDeveloper" (click)=updateProfile(profile)>Update Profile</button>
     </div>
+
   </div>
 
   <div class="ocphMark">
