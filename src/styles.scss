@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 input{
     min-height: 25px;
     margin: 2px;
@@ -28,4 +29,3 @@ button{
 a{
     color: rgb(56, 151, 151);
 }
-

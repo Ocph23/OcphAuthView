@@ -8,9 +8,16 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './auth/profile/profile.component';
-import { DeveloperComponent } from './developer/developer.component';
+import { DeveloperComponent, DeveloperModalDialog } from './developer/developer.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -43,17 +50,23 @@ const appRoutes: Routes = [
     RegisterComponent,
     ProfileComponent,
     DeveloperComponent,
+    DeveloperModalDialog
    
   ],
   imports: [
+    NoopAnimationsModule,MatProgressSpinnerModule,MatButtonModule,
     BrowserModule,AppRoutingModule,  HttpClientModule,  FormsModule, 
-    ReactiveFormsModule,
+    ReactiveFormsModule,MatTableModule,MatPaginatorModule,MatSortModule,
+    MatDialogModule,MatFormFieldModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
   providers: [],
+  entryComponents: [
+    DeveloperModalDialog
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,6 +16,10 @@ export class LoginComponent implements OnInit {
 
 model:any;
   constructor(private auth:AuthService, private fb:FormBuilder, private http:HttpClient, private router:Router) { 
+
+    if(auth.userLoged())
+        this.router.navigate(["/profile"]);
+
   this.model=  this.fb.group({
       'userName':[''],
       'password':['']

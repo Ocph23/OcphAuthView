@@ -1,0 +1,84 @@
+.main {
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right top, from(#f32f15), to(#e9c051));
+  background-image: linear-gradient(to right, #f32f15, #e9c051);
+}
+
+.main .ocphMark {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.main .main-column {
+  display: -ms-grid;
+  display: grid;
+  height: 100vh;
+  -ms-grid-columns: 25% 75%;
+      grid-template-columns: 25% 75%;
+}
+
+.main .main-column .left {
+  background: transparent;
+  padding: 50px;
+  color: white;
+}
+
+.main .main-column .left .left-content {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.main .main-column .right {
+  -webkit-box-shadow: 1px;
+          box-shadow: 1px;
+  padding: 50px;
+  background-color: white;
+}
+
+.main .main-column .right img {
+  margin: auto;
+}
+
+a {
+  margin: 20px 0px;
+  display: block;
+}
+
+input, textarea {
+  width: 100% !important;
+  margin-bottom: 20px !important;
+  padding: 3px;
+}
+
+@media screen and (max-width: 500px) {
+  .main-column {
+    -ms-grid-columns: 0% 100% !important;
+        grid-template-columns: 0% 100% !important;
+  }
+  .main-column .right {
+    padding: 100px;
+  }
+  .main-column .right img {
+    width: 100px;
+  }
+  .main-column .left img {
+    width: 0px;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+#form-add-app {
+  display: -ms-grid !important;
+  display: grid !important;
+  padding: 5px;
+}
+
+#form-add-app label {
+  width: 100%;
+}
+/*# sourceMappingURL=developer.component.css.map */

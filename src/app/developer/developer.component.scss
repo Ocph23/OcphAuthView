@@ -31,11 +31,7 @@
         padding: 50px;
         background-color: rgb(255, 255, 255);
        
-        input,textarea {
-          width: 100%;
-          margin-bottom: 20px;
-          padding: 3px;
-        }
+       
 
         img{
           margin: auto;
@@ -47,6 +43,12 @@
   a{
       margin: 20px 0px;
       display: block;
+  }
+
+  input,textarea {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    padding: 3px;
   }
   
   @media screen and (max-width: 500px) {
@@ -69,15 +71,16 @@
     }
   }
   
-  
-table{
+  table {
     width: 100%;
-    border: 1px solid silver;
-    tr{
-        border-bottom: 1px solid silver;
+  }
+
+  #form-add-app{
+    display: grid !important;
+    padding: 5px;
+    label{
+      width: 100%;
     }
-    th,td{
-        width: auto;
-    }
-}
+
+  }
   

@@ -1,0 +1,14 @@
+.main-column {
+  -ms-grid-columns: 40% 60% !important;
+      grid-template-columns: 40% 60% !important;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 15px !important;
+}
+
+label {
+  color: silver;
+}
+/*# sourceMappingURL=profile.component.css.map */

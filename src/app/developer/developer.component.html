@@ -9,28 +9,44 @@
     </div>
     <div class="right">
       <img width="0" src="../../../assets/Images/User_Circle.png" />
-      <h1>APPLICATION</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Created</th>
-            <th>Updated</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Online Voting</td>
-            <td>23/2/2019</td>
-            <td>30/8/2019</td>
-            <td>Aktif</td>
-            <td><a>Edit</a></td>
-          </tr>
-        </tbody>
+     
+      <h1>My Apps</h1>
+      <button style="margin: 10px;" mat-mini-fab (click)="openDialog()">+</button><br/>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.no}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Nama Aplikasi </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="version">
+          <th mat-header-cell *matHeaderCellDef> Versi </th>
+          <td mat-cell *matCellDef="let element"> {{element.version}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Deskripsi </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+    <!-- Symbol Column -->
+        <ng-container matColumnDef="keyApp">
+            <th mat-header-cell *matHeaderCellDef> Key Api </th>
+            <td mat-cell *matCellDef="let element"> {{element.keyApp}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
   </div>

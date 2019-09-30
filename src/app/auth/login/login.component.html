@@ -1,15 +1,16 @@
 <div class="main">
   <div class="main-column">
+    <div class="logo">
+        <img  src="../../../assets/Images/User_Circle.png" />
+    </div>
     <div class="left">
       <div class="left-content">
-        <img width="150px" src="../../../assets/Images/User_Circle.png" />
         <h1>One Account</h1>
         <h1>FOR ALL STIMIK APPS</h1>
         <h5>STIMIK SEPNOP JAYAPURA</h5>
       </div>
     </div>
     <div class="right">
-      <img width="0" src="../../../assets/Images/User_Circle.png" />
       <h1>Login</h1>
       <form [formGroup]="model" (ngSubmit)="login(model.value)">
         <label>User Name</label>

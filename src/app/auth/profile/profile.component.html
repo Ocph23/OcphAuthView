@@ -3,37 +3,35 @@
     <div class="left">
       <div class="left-content">
         <img width="150px" src="../../../assets/Images/User_Circle.png" />
-        <h1>{{profile.fullName}}</h1>
+        <h1>{{profile.nmmhs}}</h1>
         <h1>{{profile.roles[0]}}</h1>
         <h5></h5>
       </div>
     </div>
     <div class="right">
       <img width="0" src="../../../assets/Images/User_Circle.png" />
-      <button class="asDeveloper">Register As Developer</button>
+      <button *ngIf="!auth.userInRole('Developer')" class="asDeveloper" (click)="registerAsDeveloper()">Register As Developer</button>
       <h1>PROFILE</h1>
       <label>Nama</label>
-      <input  [(ngModel)]="profile.fullName" />
+      <input  [(ngModel)]="profile.nmmhs" />
 
      
      
       <label>Tempat, Tanggal Lahir</label>
-      <input  value="Palopo, 23 Februari 1979" readonly />
+      <input [(ngModel)]="profile.TTL" readonly />
 
       <label>Email</label>
-      <input  [(ngModel)]="profile.email" readonly />
+      <input  [(ngModel)]="profile.user.email" readonly />
 
       <label>Telepon</label>
-      <input  value="08114810279" readonly />
+      <input  value="{{profile.telp}}" readonly />
 
 
       <label>Alamat</label>
-      <textarea [(ngModel)]="profile.Address" >
-        Jln. Ardipura No 23
-        Jayapura
+      <textarea [(ngModel)]="profile.almt" >
       </textarea>
 
-      <label>I am a</label>
+      <label>Status</label>
       <select [(ngModel)]="profile.role">
         <option
             *ngFor="let option of Roles; index as i"
@@ -45,9 +43,15 @@
 
       <label *ngIf="ChangeIdentityLabel('Student')">NPM</label>
       <label *ngIf="ChangeIdentityLabel('Teacher')">NIDN</label>
-      <input [(ngModel)]="profile.identityNumber" *ngIf="ChangeIdentityLabel('Student') ||ChangeIdentityLabel('Teacher')" />
+      <input [(ngModel)]="profile.user.identityNumber" *ngIf="ChangeIdentityLabel('Student') ||ChangeIdentityLabel('Teacher')" />
+
+      <div *ngIf="ChangeIdentityLabel('Student')">
+          <label>Angkatan</label>
+          <input  value="{{profile.Angkatan}}" readonly />
+      </div>
 
       <button class="asDeveloper" (click)=updateProfile(profile)>Update Profile</button>
+      <button class="asDeveloper" (click)=goToDeveloper(profile) *ngIf="auth.userInRole('Developer')">My Apps</button>  
     </div>
 
   </div>

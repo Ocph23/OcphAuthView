@@ -1,0 +1,13 @@
+<h2>Aplikasi Baru</h2>
+<div id="form-add-app">
+    <label>Nama Aplikasi</label>
+    <input [(ngModel)]="data.name"/>
+    <label>Versi App</label>
+    <input  [(ngModel)]="data.version"/>
+    <label>Deskripsi App</label>
+    <textarea  [(ngModel)]="data.description"></textarea>
+  </div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Batal</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Simpan</button>
+</div>
